@@ -1,0 +1,5 @@
+<p>movie component</p>
+<hr>
+<app-movie-list *ngFor="let m of movie.results" [movieList]="m"></app-movie-list>
+<button (click)="next(1)">next</button>
+
