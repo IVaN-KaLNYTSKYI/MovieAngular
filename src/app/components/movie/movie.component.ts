@@ -15,11 +15,27 @@ export class MovieComponent implements OnInit {
   ngOnInit(): void {
     this.movieServices.getMovie(1).subscribe(value => {
       this.movie = value
+      console.log(value)
       console.log(this.movie)
     })
   }
   next(pageMovie:number){
     this.movieServices.getMovie(this.movie.page+pageMovie).subscribe(value => {
+      this.movie = value
+    })
+  }
+  back(pageMovie:number){
+    this.movieServices.getMovie(this.movie.page-pageMovie).subscribe(value => {
+      this.movie = value
+    })
+  }
+  firstPage(pageMovie:number){
+    this.movieServices.getMovie(pageMovie).subscribe(value => {
+      this.movie = value
+    })
+  }
+  lastPage(pageMovie:number){
+    this.movieServices.getMovie(pageMovie).subscribe(value => {
       this.movie = value
     })
   }

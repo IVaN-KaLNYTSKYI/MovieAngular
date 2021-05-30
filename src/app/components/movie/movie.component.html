@@ -1,5 +1,12 @@
 <p>movie component</p>
-<hr>
-<app-movie-list *ngFor="let m of movie.results" [movieList]="m"></app-movie-list>
-<button (click)="next(1)">next</button>
+<div class="movie">
+  <app-movie-list *ngFor="let m of movie.results" [movieList]="m"></app-movie-list>
+</div>
+<div class="movie-btn">
+  <button class="btn" (click)="firstPage(1)" [disabled]="movie.page===1">firstPage</button>
+  <button  class="btn" (click)="back(1)" [disabled]="movie.page===1">back</button>
+  <span>Сторінка-{{movie.page}}</span>
+  <button class="btn" (click)="next(1)" [disabled]="movie.page===500">next</button>
+  <button class="btn" (click)="lastPage(movie.total_pages)" [disabled]="movie.page===500">lastPage</button>
+</div>
 

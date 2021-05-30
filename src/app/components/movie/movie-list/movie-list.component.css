@@ -2,3 +2,11 @@ img{
   width: 200px;
   height: 300px;
 }
+.movie-list{
+  width: 200px;
+  height: 370px;
+  margin: 10px 18px 5px 20px;
+}
+.movie-list-title{
+  font-size: 18px;
+}
