@@ -7,6 +7,8 @@ img{
   height: 370px;
   margin: 10px 18px 5px 20px;
 }
-.movie-list-title{
+.movie-list-title a{
   font-size: 18px;
+  text-decoration: none;
+  color: black;
 }

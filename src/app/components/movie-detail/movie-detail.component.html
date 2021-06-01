@@ -1,5 +1,35 @@
-<div>
-  {{movie.title}}-
-  {{movie.id}}
-  <button (click)="add(movie.poster_path)">like</button>
+<div class="movie-detail-box">
+  <div [style]="stl(movie.backdrop_path)" class="movie-detail-info">
+    <div class="movie-detail-img">
+      <img [src]="movieImg+movie.poster_path" alt="test">
+    </div>
+    <div class="movie-detail-all">
+      <div class="movie-detail-all-box">
+        <span class="movie-detail-all-title">{{movie.original_title}}</span>
+        (<span class="movie-detail-all-date">{{movie.release_date.split("-")[0]}}</span>)
+      </div>
+      <div class="movie-detail-all-vota">
+        <span>Vote Average:</span>
+        <div>{{movie.vote_average}}</div>
+      </div>
+      <div class="movie-detail-all-genres">
+        <span>Genres:</span>
+        <div>
+          <ul *ngFor="let o of movie.genres">
+            <li>{{o.name}}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="movie-detail-all-popular">
+        Popularity:<span>{{movie.popularity}}</span>
+      </div>
+      <div class="movie-detail-all-over">
+        Overview:<span>{{movie.overview}}</span>
+      </div>
+      <div class="movie-detail-all-btn">
+        <button [disabled]="per()" (click)="addLike(movie)">like</button>
+      </div>
+    </div>
+  </div>
 </div>
+
