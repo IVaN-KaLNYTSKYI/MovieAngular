@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Movie} from "../models/Movie";
 import {ResultsMovie} from "../models/ResultsMovie";
+import {MovieVideo} from "../models/movie-video";
 
 @Injectable({
   providedIn: 'root'
@@ -24,5 +25,9 @@ export class MovieService {
   }
   getMovieId(id:number): Observable<ResultsMovie> {
     return this.httpClient.get<ResultsMovie>(this.base+this.path.movieId+id+this.API_KEY)
+  }
+
+  getVideo(id:number):Observable<MovieVideo>{
+    return this.httpClient.get<MovieVideo>(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=8aaf14eada5c1779a594aaa553b31207`)
   }
 }

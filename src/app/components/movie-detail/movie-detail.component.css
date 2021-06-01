@@ -1,6 +1,6 @@
 .movie-detail-box{
   width: 100%;
-  height: 80vh;
+  min-height: 80vh;
   background: greenyellow;
 }
 .movie-detail-info{
@@ -97,4 +97,7 @@
   height: 20px;
   text-transform: uppercase;
   background: red;
+}
+.movie-detail-video iframe{
+  border: none;
 }
