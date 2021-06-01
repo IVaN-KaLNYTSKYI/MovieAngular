@@ -14,5 +14,7 @@ export class LikeComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+remove(id:number){
+    console.log(id)
+}
 }
