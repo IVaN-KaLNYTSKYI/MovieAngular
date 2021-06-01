@@ -17,7 +17,7 @@ let routes: Routes = [
   {path: 'movie', component:MovieComponent },
   {path: 'movie/:id', component:MovieDetailComponent},
   {path: 'like', component:LikeComponent },
-  {path: 'home', component:HomeComponent },
+  {path: '', component:HomeComponent },
 ];
 @NgModule({
   declarations: [

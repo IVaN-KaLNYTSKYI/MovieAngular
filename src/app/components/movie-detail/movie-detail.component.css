@@ -1,7 +1,6 @@
 .movie-detail-box{
   width: 100%;
   min-height: 80vh;
-  background: greenyellow;
 }
 .movie-detail-info{
   width: 100%;
@@ -99,5 +98,18 @@
   background: red;
 }
 .movie-detail-video iframe{
+  margin-top: 20px;
   border: none;
+  margin-bottom: 20px;
+  box-shadow:20px 20px 90px 20px black
+}
+.movie-detail-video{
+  width: 100%;
+}
+.movie-detail-video-box{
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

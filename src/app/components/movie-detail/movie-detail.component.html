@@ -32,7 +32,15 @@
     </div>
   </div>
   <div class="movie-detail-video">
-    <iframe width="560" height="315" [src]="movieVideo(video.results[0].key)" allowfullscreen></iframe>
+    <div class="movie-detail-video-box">
+      <iframe
+        loading="lazy"
+        width="800"
+        height='415'
+        [src]="movieVideo(video.results[0].key)"
+        allowfullscreen>
+      </iframe>
+    </div>
   </div>
 </div>
 
