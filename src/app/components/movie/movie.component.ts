@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {MovieService} from "../../services/movie.service";
-import {Movie} from "../../models/Movie";
+import {Movie} from "../../models/movie";
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-movie',
@@ -9,14 +10,12 @@ import {Movie} from "../../models/Movie";
 })
 export class MovieComponent implements OnInit {
   movie:Movie
-  constructor(private movieServices: MovieService) {
+  constructor(private movieServices: MovieService){
   }
 
   ngOnInit(): void {
     this.movieServices.getMovie(1).subscribe(value => {
       this.movie = value
-      console.log(value)
-      console.log(this.movie)
     })
   }
   next(pageMovie:number){

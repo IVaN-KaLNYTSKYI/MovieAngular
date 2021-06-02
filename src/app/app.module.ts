@@ -13,6 +13,7 @@ import { LikeComponent } from './components/like/like.component';
 import { HomeComponent } from './components/home/home.component';
 import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
 
+
 let routes: Routes = [
   {path: 'movie', component:MovieComponent },
   {path: 'movie/:id', component:MovieDetailComponent},

@@ -1,4 +1,4 @@
-import {ResultsMovie} from "./ResultsMovie";
+import {ResultsMovie} from "./results-movie";
 
 export interface Movie {
   page:number

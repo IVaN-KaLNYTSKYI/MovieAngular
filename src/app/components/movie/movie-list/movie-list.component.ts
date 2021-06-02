@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ResultsMovie} from "../../../models/ResultsMovie";
+import {ActivatedRoute, Router} from '@angular/router';
+import {ResultsMovie} from "../../../models/results-movie";
 
 @Component({
   selector: 'app-movie-list',
@@ -7,13 +8,17 @@ import {ResultsMovie} from "../../../models/ResultsMovie";
   styleUrls: ['./movie-list.component.css']
 })
 export class MovieListComponent implements OnInit {
-  movieImg='https://image.tmdb.org/t/p/original'
+  movieImg = 'https://image.tmdb.org/t/p/original'
   @Input()
   movieList: ResultsMovie
-  constructor() { }
 
-  ngOnInit(): void {
-    console.log(this.movieList)
+  constructor(private router: Router,private activatedRoute:ActivatedRoute) {
   }
 
+  ngOnInit(): void {
+  }
+
+  detail() {
+    this.router.navigate([this.movieList.id], {relativeTo: this.activatedRoute, state: this.movieList});
+  }
 }

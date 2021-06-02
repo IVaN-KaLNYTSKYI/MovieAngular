@@ -1,4 +1,4 @@
 <div class="movie-list">
   <img [src]="movieImg+movieList.poster_path" alt="test">
-  <div class="movie-list-title"><a routerLink="{{movieList.id}}">{{movieList.title}}</a></div>
+  <div class="movie-list-title"><a (click)="detail()">{{movieList.title}}</a></div>
 </div>

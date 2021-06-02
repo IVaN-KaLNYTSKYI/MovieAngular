@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
 import {ActivatedRoute} from "@angular/router";
 import {MovieService} from "../../services/movie.service";
-import {ResultsMovie} from "../../models/ResultsMovie";
+import {ResultsMovie} from "../../models/results-movie";
 import {MovieVideo} from "../../models/movie-video";
 
 @Component({
@@ -21,7 +21,7 @@ export class MovieDetailComponent implements OnInit {
   constructor(private movieServices: MovieService, private activatedRoute: ActivatedRoute, private sanitizer: DomSanitizer) {
     this.activatedRoute.params.subscribe(value => {
       this.id = +value.id
-      this.movieServices.getMovieId(value.id).subscribe(value => {
+      this.movieServices.getMovieId(this.id).subscribe(value => {
         this.movie = value
       })
     })
@@ -39,20 +39,16 @@ export class MovieDetailComponent implements OnInit {
   }
 
   addLike(movie: object) {
-    console.log(this.per())
-    if (!this.per()) {
       this.list.push(movie)
-    } else {
-      alert("no")
-    }
-    localStorage.setItem("lik", JSON.stringify(this.list))
+      localStorage.setItem("lik", JSON.stringify(this.list))
   }
 
   stl(url: string) {
     return (
       `background-image:linear-gradient(rgba(0,0,0,0.9),
-     rgba(0,0,0,0.6)),
-     url(https://image.tmdb.org/t/p/original${url})`)
+       rgba(0,0,0,0.6)),
+       url(https://image.tmdb.org/t/p/original${url})`
+    )
   }
 
   movieVideo(key: string) {
