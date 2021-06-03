@@ -26,8 +26,11 @@
       <div class="movie-detail-all-over">
         Overview:<span>{{movie.overview}}</span>
       </div>
-      <div class="movie-detail-all-btn">
+      <div class="movie-detail-all-btn" *ngIf="!per()">
         <button [disabled]="per()" (click)="addLike(movie)">like</button>
+      </div>
+      <div class="movie-detail-all-btn" *ngIf="per()">
+        <button [disabled]="per()" (click)="addLike(movie)">MOVIE YES</button>
       </div>
     </div>
   </div>

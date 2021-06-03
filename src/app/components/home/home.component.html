@@ -1,1 +1,8 @@
-<p>home works!</p>
+<div>
+  <div class="home-text"><span>Popular</span></div>
+  <div class="home">
+    <div  *ngFor="let m of movie.results">
+      <img routerLink="movie/{{m.id}}" [src]="movieImg+m.poster_path" alt="test">
+    </div>
+  </div>
+</div>

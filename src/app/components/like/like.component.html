@@ -1,4 +1,6 @@
-<div class="movie-like" *ngFor="let o of data">
-  <img [src]="movieImg+o.poster_path" alt="test">
-  <button (click)="remove(o.id)">remove</button>
+<div class="movie-like">
+  <div class="movie-like-box" *ngFor="let o of data">
+    <img [src]="movieImg+o.poster_path" alt="test">
+    <button (click)="remove(o.id)">x</button>
+  </div>
 </div>

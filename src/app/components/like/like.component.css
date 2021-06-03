@@ -1,3 +1,26 @@
+.movie-like{
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 76.5vh;
+}
 .movie-like img {
-  height: 350px;
+ height: 300px;
+}
+.movie-like-box{
+  margin: 10px 13px 10px 15px;
+  position: relative;
+}
+.movie-like-box button{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: none;
+  background: red;
+  position: absolute;
+  top:0;
+  left: 0;
+  text-transform: uppercase;
+
 }
