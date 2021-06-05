@@ -13,11 +13,13 @@
   position: relative;
 }
 .movie-like-box button{
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 50%;
   border: none;
-  background: red;
   position: absolute;
   top:0;
   left: 0;

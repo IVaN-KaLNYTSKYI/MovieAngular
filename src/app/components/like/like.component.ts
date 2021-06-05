@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ResultsMovie} from "../../models/results-movie";
 import {Movie} from "../../models/movie";
 
+
 @Component({
   selector: 'app-like',
   templateUrl: './like.component.html',
