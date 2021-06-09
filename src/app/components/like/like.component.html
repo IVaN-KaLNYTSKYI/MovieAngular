@@ -1,5 +1,8 @@
-<div class="movie-like">
-  <div class="movie-like-box" *ngFor="let o of data">
+<div *ngIf="!movieLoading" class="loaning">
+  <mat-spinner></mat-spinner>
+</div>
+<div *ngIf="movieLoading" class="movie-like">
+  <div class="movie-like-box" *ngFor="let o of data" >
     <img [src]="movieImg+o.poster_path" alt="test">
     <button mat-mini-fab color="primary" (click)="remove(o.id)"><mat-icon>delete</mat-icon></button>
   </div>

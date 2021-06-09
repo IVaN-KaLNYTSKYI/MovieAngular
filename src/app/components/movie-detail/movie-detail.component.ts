@@ -4,6 +4,7 @@ import {ActivatedRoute} from "@angular/router";
 import {MovieService} from "../../services/movie.service";
 import {ResultsMovie} from "../../models/results-movie";
 import {MovieVideo} from "../../models/movie-video";
+import {MovieBehaviorService} from "../../services/movie-behavior.service";
 
 @Component({
   selector: 'app-movie-detail',
@@ -18,7 +19,7 @@ export class MovieDetailComponent implements OnInit {
   movieImg = 'https://image.tmdb.org/t/p/original'
   id: number
 
-  constructor(private movieServices: MovieService, private activatedRoute: ActivatedRoute, private sanitizer: DomSanitizer) {
+  constructor(private movieServices: MovieService, private activatedRoute: ActivatedRoute, private sanitizer: DomSanitizer, private movieBehavior: MovieBehaviorService) {
     this.activatedRoute.params.subscribe(value => {
       this.id = +value.id
       this.movieServices.getMovieId(this.id).subscribe(value => {
@@ -39,8 +40,10 @@ export class MovieDetailComponent implements OnInit {
   }
 
   addLike(movie: object) {
-      this.list.push(movie)
-      localStorage.setItem("lik", JSON.stringify(this.list))
+    this.list.push(movie)
+    localStorage.setItem("lik", JSON.stringify(this.list))
+    this.movieBehavior.like.next(this.list.length)
+    localStorage.setItem("nim", JSON.stringify(this.movieBehavior.like.getValue()))
   }
 
   stl(url: string) {

@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class MovieComponent implements OnInit {
   movie:Movie
+  movieLoading=false
   constructor(private movieServices: MovieService){
   }
 
@@ -17,25 +18,37 @@ export class MovieComponent implements OnInit {
     this.movieServices.getMovie(1).subscribe(value => {
       this.movie = value
     })
+    setTimeout(()=>{
+      this.movieLoading=true
+    },1500)
+
   }
   next(pageMovie:number){
     this.movieServices.getMovie(this.movie.page+pageMovie).subscribe(value => {
       this.movie = value
+      this.movieLoading=false
+      setTimeout(()=>{this.movieLoading=true},500)
     })
   }
   back(pageMovie:number){
     this.movieServices.getMovie(this.movie.page-pageMovie).subscribe(value => {
       this.movie = value
+      this.movieLoading=false
+      setTimeout(()=>{this.movieLoading=true},500)
     })
   }
   firstPage(pageMovie:number){
     this.movieServices.getMovie(pageMovie).subscribe(value => {
       this.movie = value
+      this.movieLoading=false
+      setTimeout(()=>{this.movieLoading=true},500)
     })
   }
   lastPage(pageMovie:number){
     this.movieServices.getMovie(pageMovie).subscribe(value => {
       this.movie = value
+      this.movieLoading=false
+      setTimeout(()=>{this.movieLoading=true},500)
     })
   }
 }

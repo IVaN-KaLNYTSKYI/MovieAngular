@@ -1,4 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {ResultsMovie} from "../../models/results-movie";
+import {MovieBehaviorService} from "../../services/movie-behavior.service";
 
 @Component({
   selector: 'app-header',
@@ -14,6 +16,11 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+  }
+
+  likeCounter(): void {
+    return JSON.parse(<string>localStorage.getItem("nim"))
   }
 
 }

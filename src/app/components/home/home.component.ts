@@ -10,6 +10,8 @@ import {Movie} from "../../models/movie";
 export class HomeComponent implements OnInit {
   movie: Movie
   movieImg = 'https://image.tmdb.org/t/p/original'
+  movieLoading=false
+
   constructor(private movieServices: MovieService) {
   }
 
@@ -17,6 +19,9 @@ export class HomeComponent implements OnInit {
     this.movieServices.getMovie(1).subscribe(value => {
       this.movie = value
     })
+    setTimeout(()=>{
+      this.movieLoading=true
+    },1500)
   }
 
 }

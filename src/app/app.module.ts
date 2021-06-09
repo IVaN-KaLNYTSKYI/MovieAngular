@@ -15,6 +15,9 @@ import { MovieDetailComponent } from './components/movie-detail/movie-detail.com
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
+import {MatBadgeModule} from "@angular/material/badge";
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 
 let routes: Routes = [
@@ -22,6 +25,7 @@ let routes: Routes = [
   {path: 'movie/:id', component:MovieDetailComponent},
   {path: 'like', component:LikeComponent },
   {path: '', component:HomeComponent },
+  {path:'**',component:NotFoundComponent}
 ];
 @NgModule({
   declarations: [
@@ -32,7 +36,8 @@ let routes: Routes = [
     FooterComponent,
     LikeComponent,
     HomeComponent,
-    MovieDetailComponent
+    MovieDetailComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +46,8 @@ let routes: Routes = [
     BrowserAnimationsModule,
     MatButtonModule,
     MatIconModule,
+    MatBadgeModule,
+    MatProgressSpinnerModule
   ],
   providers: [MovieService],
   bootstrap: [AppComponent]

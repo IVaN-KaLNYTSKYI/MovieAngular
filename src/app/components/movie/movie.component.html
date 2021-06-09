@@ -1,7 +1,10 @@
-<div class="movie" style="margin-bottom: 20px">
+<div *ngIf="!movieLoading" class="loaning">
+  <mat-spinner></mat-spinner>
+</div>
+<div *ngIf="movieLoading" class="movie" style="margin-bottom: 20px">
   <app-movie-list *ngFor="let m of movie.results" [movieList]="m"></app-movie-list>
 </div>
-<div class="movie-btn">
+<div *ngIf="movieLoading" class="movie-btn">
   <button class="btn" (click)="firstPage(1)" [disabled]="movie.page===1">firstPage</button>
   <button  class="btn" (click)="back(1)" [disabled]="movie.page===1">back</button>
   <span>Сторінка-{{movie.page}}</span>

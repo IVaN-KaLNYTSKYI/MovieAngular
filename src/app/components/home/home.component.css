@@ -22,3 +22,9 @@
   box-shadow: 0 40px 70px 20px black;
   font-family: Marker Felt, fantasy;
 }
+.loaning{
+  height: 77vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

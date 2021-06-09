@@ -27,10 +27,10 @@
         Overview:<span>{{movie.overview}}</span>
       </div>
       <div class="movie-detail-all-btn" *ngIf="!per()">
-        <button [disabled]="per()" (click)="addLike(movie)">like</button>
+        <mat-icon (click)="addLike(movie)">favorite_border</mat-icon>
       </div>
       <div class="movie-detail-all-btn" *ngIf="per()">
-        <button [disabled]="per()" (click)="addLike(movie)">MOVIE YES</button>
+       <mat-icon  style="color: red">favorite</mat-icon>
       </div>
     </div>
   </div>

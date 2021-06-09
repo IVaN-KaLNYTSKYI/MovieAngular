@@ -1,3 +1,9 @@
+.loaning{
+  height: 77vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .movie-like{
   width: 1200px;
   margin: 0 auto;

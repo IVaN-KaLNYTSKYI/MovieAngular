@@ -1,4 +1,7 @@
-<div>
+<div *ngIf="!movieLoading" class="loaning">
+  <mat-spinner></mat-spinner>
+</div>
+<div *ngIf="movieLoading">
   <div class="home-text"><span>Popular</span></div>
   <div class="home">
     <div  *ngFor="let m of movie.results">
