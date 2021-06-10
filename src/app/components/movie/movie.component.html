@@ -1,12 +1,17 @@
 <div *ngIf="!movieLoading" class="loaning">
   <mat-spinner></mat-spinner>
 </div>
+<div *ngIf="movieLoading" class="search">
+  <form [formGroup]="myFormGroup" (input)="search()">
+    <input type="text" name="text" placeholder="Movie" [formControl]="textControl">
+  </form >
+</div>
 <div *ngIf="movieLoading" class="movie" style="margin-bottom: 20px">
   <app-movie-list *ngFor="let m of movie.results" [movieList]="m"></app-movie-list>
 </div>
 <div *ngIf="movieLoading" class="movie-btn">
   <button class="btn" (click)="firstPage(1)" [disabled]="movie.page===1">firstPage</button>
-  <button  class="btn" (click)="back(1)" [disabled]="movie.page===1">back</button>
+  <button class="btn" (click)="back(1)" [disabled]="movie.page===1">back</button>
   <span>Сторінка-{{movie.page}}</span>
   <button class="btn" (click)="next(1)" [disabled]="movie.page===500">next</button>
   <button class="btn" (click)="lastPage(movie.total_pages)" [disabled]="movie.page===500">lastPage</button>

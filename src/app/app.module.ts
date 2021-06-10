@@ -18,6 +18,7 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatBadgeModule} from "@angular/material/badge";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 let routes: Routes = [
@@ -47,7 +48,8 @@ let routes: Routes = [
     MatButtonModule,
     MatIconModule,
     MatBadgeModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    ReactiveFormsModule
   ],
   providers: [MovieService],
   bootstrap: [AppComponent]

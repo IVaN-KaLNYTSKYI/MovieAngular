@@ -11,7 +11,8 @@ import { Movie } from '../models/movie';
 export class MovieService {
   private path={
     discover:'/discover/movie',
-    movieId:'/movie/'
+    movieId:'/movie/',
+    search:"/search/movie"
   }
   private base = "https://api.themoviedb.org/3"
   private API_KEY = "?api_key=8aaf14eada5c1779a594aaa553b31207"
@@ -29,5 +30,8 @@ export class MovieService {
 
   getVideo(id:number):Observable<MovieVideo>{
     return this.httpClient.get<MovieVideo>(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=8aaf14eada5c1779a594aaa553b31207`)
+  }
+  getMovieSearch(text:string):Observable<Movie>{
+    return this.httpClient.get<Movie>(this.base+this.path.search+this.API_KEY+"&query="+text)
   }
 }
